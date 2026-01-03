@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soham Mulay | Frontend Web Developer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+    body {
+      background: radial-gradient(circle at top, #3b0764, #020617 60%);
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(2,6,23,0.6);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    header {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      padding: 120px 80px;
+      gap: 40px;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.1;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .hero-text h1 span { color: #a855f7; }
+
+    .hero-text p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #cbd5f5;
+      max-width: 520px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .hero-cta {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,#a855f7,#6366f1);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(168,85,247,0.4);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn.alt {
+      background: transparent;
+      border: 1px solid #6366f1;
+    }
+
+    /* FLOATING VISUAL */
+    .hero-visual {
+      height: 420px;
+      border-radius: 24px;
+      background: linear-gradient(135deg,#1e1b4b,#020617);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: #a855f7;
+      opacity: 0;
+      transform: scale(0.8) rotate(-6deg);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 120px 40px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      opacity: 0;
+    }
+
+    .card {
+      background: rgba(15,23,42,0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .hire-card {
+      background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(99,102,241,0.15));
+      backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 500px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #6366f1;
+      border-radius: 8px;
+      background: rgba(15,23,42,0.8);
+      color: #e5e7eb;
+      font-size: 1rem;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #94a3b8;
+    }
+
+    @media(max-width: 900px) {
+      header { grid-template-columns: 1fr; padding: 120px 30px; }
+      .hero-text h1 { font-size: 3rem; }
+      .hire-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <strong>Soham</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="#hire">Hire</a>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-text">
+    <h1>Hello, I’m <span>Soham</span><br>Frontend Web Developer</h1>
+    <p>I build clean, responsive, and animated websites using HTML, CSS, and modern motion design.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#hire">Hire Me</a>
+      <a class="btn alt" href="projects.html">View Work</a>
+    </div>
+  </div>
+  <div class="hero-visual">Σ</div>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">Frontend Web Developer focused on responsive layouts, UI polish, and smooth animations. Currently pursuing BBA (Computer Applications).</div>
+</section>
+
+<section id="hire">
+  <h2>Hire Me</h2>
+  <div class="hire-card">
+    <div>
+      <p>Ready to bring your ideas to life? Let's collaborate on your next project.</p>
+      <p>Contact me at <a href="mailto:soham@example.com" style="color: #c7d2fe;">soham@example.com</a> or fill out the form below.</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Get In Touch</button>
+    </form>
+  </div>
+</section>
+
+<footer>© 2024 Soham Mulay</footer>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('.hero-text h1', {opacity:1,y:0,duration:1});
+  gsap.to('.hero-text p', {opacity:1,y:0,duration:1,delay:0.2});
+  gsap.to('.hero-cta', {opacity:1,delay:0.4});
+  gsap.to('.hero-visual', {opacity:1,scale:1,rotate:0,duration:1.2,ease:'power4.out'});
+
+  gsap.utils.toArray('section').forEach(sec => {
+    gsap.fromTo(sec.querySelector('h2'),{opacity:0,y:30},{opacity:1,y:0,scrollTrigger:{trigger:sec,start:'top 80%'}});
+    gsap.fromTo(sec.querySelectorAll('.card, .hire-card'),{opacity:0,y:40},{opacity:1,y:0,stagger:0.15,scrollTrigger:{trigger:sec,start:'top 75%'}});
+  });
+
+  // Simple form submission handler (replace with real backend)
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
